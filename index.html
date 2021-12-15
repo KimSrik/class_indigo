@@ -101,6 +101,15 @@
         .sec{
             margin-bottom: 120px;
         }
+        .sec:last-of-type{
+            margin-bottom: 0;
+        }
+
+        hr{
+            height: 2px;
+            background-color: #e0e0e0;
+            border: none;
+        }
 
 
         /* skip-menu style */
@@ -134,6 +143,7 @@
             top: 0;
             z-index: 1000;
             /* 같은 레벨 끼리는 z-index를 줘야한다. */
+            border-bottom: 1px solid #e0e0e0;
             padding: 24px 52px;
             background-color: #fff;
         }
@@ -185,11 +195,14 @@
             float: left;
             width: 484px;
             margin-right: 20px;
-            border-right: 2px solid #616161;
+            margin-bottom: 122px;
+            border-right: 2px solid #e0e0e0;
+            padding: 7.5px 0;
         }
         .we-are>.container>p{
             float: left;
             width: 628px;
+            margin-top: -10px;
 
         }
         .we-are ul{
@@ -203,9 +216,205 @@
         .we-are li:last-child{
             margin-right: 0;
         }
+        .we-are li::before{
+            content:'';
+            display: block;
+            height: 50px;
+            background:url("./images/ico-pro01.jpg") no-repeat center top;
+            margin-bottom: 21px;
+        }
+        .we-are li:nth-child(2)::before{
+            background-image:url("./images/ico-pro02.jpg");
+        }
+        .we-are li:nth-child(3)::before{
+            background-image:url("./images/ico-pro03.jpg");
+        }
+        .we-are li:nth-child(4)::before{
+            background-image:url("./images/ico-pro04.jpg");
+        }
+        .we-are h3{
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 9px;
+        }
+        .we-are h3+p{
+            font-size: 14px;
+            line-height: 23px;   
+        }
+
+        /* work style */
+        .work h2{
+            width: 1132px;
+            margin: 0 auto 86px;
+        }
+        .work li{
+            position: relative;
+            float: left;
+            width: 25%;
+            overflow: hidden;
+        }
+        /* 일반 work-txt style */
+        .work .work-txt{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            transform: translateY(100%);
+            opacity: 0;
+            transition: 1s;
 
 
+            padding: 30px;
+            font-size: 11px; 
+            color: #fff;                      
+        }
+        /* li에 hover됬을 때 work-txt의 style */
+        .work li:hover .work-txt{
+            transform: translateY(0);
+            opacity: 1;
 
+        }
+        .work .work-txt h3{
+
+
+            font-size: 23px;
+            color: #fff;      
+                 
+        }
+        .work li:before{
+            content: '';
+            display: block;
+            background-color: #3f51b5;
+            opacity: 0.86;
+
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+
+            transform: translateY(-100%);
+            transition: 1s;
+        }
+        .work li:hover::before{
+            transform: translateY(0);
+        }
+
+        .mini-divider hr{
+            width: 20px;
+            margin: 0 auto;
+            background-color: #3f51b5;
+        }
+
+        /* blog, contact style */
+        .blog h2, .blog li, .contact h2, .contact fieldset{
+            float: left;
+            width: 268px;
+            margin-right: 20px;
+        }
+        .contact fieldset{
+            width: 412px;
+            border: none;
+        }
+        .blog .blog-list, .contact form{
+            float: left;
+            width: 844px;           
+        }
+        /* .blog li{
+            float: left;
+            width: 268px;
+            margin-right: 20px;
+        } */
+        .blog li:last-child, .contact fieldset:last-child{
+            margin-right: 0;
+        }
+        .blog .blog-img{
+            margin-bottom: 3px;
+        }
+        .blog h3{
+            font-weight: 100;
+            font-size: 11px;
+            color: #9e9e9e;
+        }
+        .blog h3 p{
+            line-height: 27px;
+        }
+        .blog li{
+            perspective: 500px;
+        }
+        .blog li .li-content{
+            transform: rotateY(0);
+            transition: 0.5s;
+            backface-visibility: hidden;
+        }
+        .blog li:hover .li-content{
+            transform: rotateY(360deg);
+        }
+
+        form label, form input, form textarea{
+            width: 100%;
+        }
+        form label{
+            height: 0;
+            overflow: hidden;
+        }
+        form fieldset:first-child, input, form textarea{
+            border: none;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #757575;
+            padding: 12px;
+
+            background-color: #fff;
+            color: #3f51b5;
+        }
+        /* placeholder은 가상요소이다. ::을 써야됨 */
+        form fieldset input::placeholder, form textarea::placeholder{
+            font-size: 12px;
+            color: #3f51b5;
+        }
+
+        form fieldset:first-child{
+            border: none;
+        }
+
+        form textarea{
+            height: 142px;
+        }
+
+        form input[type="submit"]{
+            display:inline-block;
+            width: 124px;
+            padding: 12px 0;
+            background-color: #3f51b5;
+            font-size: 12px;
+            color: #fff;
+            text-align: center;
+        }
+
+        form fieldset:last-child{
+            text-align: right;
+        }
+
+        .footer .container{
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* footer style */
+        .footer address{
+            /* padding: 10px 0; */
+            /* text-align: center; */
+            color: #3f51b5;
+            font-style: normal;
+            text-transform: uppercase;
+        }
+
+        
+
+        
 
 
     </style>
@@ -259,31 +468,27 @@
                 </p>                              
                 <ul class="clearfix">
                     <li>
-                        <div class="ico-box"><img src="./images/ico-pro01.jpg" alt="home"></div>
                         <h3>HOME</h3>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores tenetur ullam sequi?
+                            Lorem ipsum adipisicing elit. Maiores tenetur ullam sequi?
                         </p>
                     </li>
                     <li>
-                        <div class="ico-box"><img src="./images/ico-pro02.jpg" alt="we are"></div>
                         <h3>WE ARE</h3>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores tenetur ullam sequi?
+                            Lorem ipsum adipisicing elit. Maiores tenetur ullam sequi?
                         </p>
                     </li>
                     <li>
-                        <div class="ico-box"><img src="./images/ico-pro03.jpg" alt="work"></div>
                         <h3>WORK</h3>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores tenetur ullam sequi?
+                            Lorem ipsum adipisicing elit. Maiores tenetur ullam sequi?
                         </p>
                     </li>
                     <li>
-                        <div class="ico-box"><img src="./images/ico-pro04.jpg" alt="blog"></div>
                         <h3>BLOG</h3>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores tenetur ullam sequi?
+                            Lorem ipsum adipisicing elit. Maiores tenetur ullam sequi?
                         </p>
                     </li>
                 </ul>
@@ -299,7 +504,7 @@
             <div class="container full-container">
                 <h2>work</h2>
                 <div class="work-list">
-                    <ul>
+                    <ul class="clearfix">
                         <!-- 
                             의미없는 박스는 엘리먼트로 만드는 것이 아니다. 
                             (가상요소를 활용)
@@ -365,54 +570,64 @@
 
             </div>
         </section>
-        <section class="sec divider">
+        <section class="sec mini-divider">
             <div class="container">
                 <hr>
             </div>
         </section>
         <section class="sec blog" id="blog"> 
-            <div class="container">
+            <div class="container clearfix">
                 <h2>blog</h2>
                 <div class="blog-list">
-                    <ul>
+                    <ul class="clearfix">
                         <li>
-                            <div class="blog-img"><img src="./images/img-blog01.jpg" alt="블로그1"></div>
-                            <h3>2021-12-14</h3>
-                            <p>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, nisi.
-                            </p>
+                            <div class="li-content">
+                                <div class="blog-img"><img src="./images/img-blog01.jpg" alt="블로그1"></div>
+                                <h3>2021-12-14</h3>
+                                <p>
+                                    Lorem, ipsum amet consectetur adipisicing elit. Nulla, nisi.
+                                </p>
+                            </div>
                         </li>
                         <li>
-                            <div class="blog-img"><img src="./images/img-blog02.jpg" alt="블로그2"></div>
-                            <h3>2021-12-10</h3>
-                            <p>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, nisi.
-                            </p>
+                            <div class="li-content">
+                                <div class="blog-img"><img src="./images/img-blog02.jpg" alt="블로그2"></div>
+                                <h3>2021-12-10</h3>
+                                <p>
+                                    Lorem, ipsum amet consectetur adipisicing elit. Nulla, nisi.
+                                </p>
+                            </div>
                         </li>
                         <li>
-                            <div class="blog-img"><img src="./images/img-blog03.jpg" alt="블로그3"></div>
-                            <h3>2021-12-02</h3>
-                            <p>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, nisi.
-                            </p>
+                            <div class="li-content">
+                                <div class="blog-img"><img src="./images/img-blog03.jpg" alt="블로그3"></div>
+                                <h3>2021-12-02</h3>
+                                <p>
+                                    Lorem, ipsum amet consectetur adipisicing elit. Nulla, nisi.
+                                </p>
+                            </div>
                         </li>
                     </ul>
                 </div>
             </div>
         </section>
         <section class="sec contact" id="contact">
-            <div class="container">
+            <div class="container clearfix">
                 <h2>contact</h2>
-                <form>
-                    <label for="name">name</label>
-                    <input type="text" name="name" id="name" placeholder="Name">
-                    <label for="name">phone</label>
-                    <input type="text" name="phone" id="phone" placeholder="Phone">
-                    <label for="email">email address</label>
-                    <input type="email" name="email" id="email" placeholder="Email Address">
-                    <label for="message">message</label>
-                    <textarea name="message" id="message" placeholder="Message"></textarea>
-                    <input type="submit" value="Send Message">
+                <form class="clearfix">
+                    <fieldset>
+                        <label for="name">name</label>
+                        <input type="text" name="name" id="name" placeholder="Name">
+                        <label for="phone">phone</label>
+                        <input type="tel" name="phone" id="phone" placeholder="Phone">
+                        <label for="email">email address</label>
+                        <input type="email" name="email" id="email" placeholder="Email Address">
+                    </fieldset>
+                    <fieldset>
+                        <label for="message">message</label>
+                        <textarea name="message" id="message" placeholder="Message"></textarea>
+                        <input type="submit" value="Send Message">
+                    </fieldset>
                 </form>
 
             </div>
