@@ -1,0 +1,84 @@
+@charset 'utf-8';
+/* 
+다른 부분만 남겨두면 된다.
+상속 받는 순서에 의해서 기존에 같은 스타일은 desktop.css에서 
+상속을 받기 때문이다.
+*/
+/* 해당 뷰포트에 맞게 설정할 수 있게 부모클래스를 상속 받아서 크기 조정 */
+.we-are .container, .blog .container, .contact .container, .map .container, .divider .container, .footer .container{
+    width:100%;
+    max-width: 1132px;
+}
+
+/* we are style */
+.we-are h2{
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+    border-right: none;
+    text-align: center;
+}
+.we-are>.container>p{
+    float: none;
+    width: 80%;
+    margin: 0 auto 50px;
+}
+.we-are ul{
+    float: none;
+    width: 90%;
+    margin: 0 auto;
+}
+.we-are li{
+    /* float: left; */
+    width: 48%;
+    margin-right: 4%;
+    text-align: center;
+}
+.we-are li:nth-child(2n){
+    margin-right: 0;
+}
+
+/* work style */
+.work h2{
+    width:100%;
+    max-width: 1132px;
+    text-align: center;
+}
+.work li{
+    width: 50%;
+}
+
+/* blog, contact style */
+.blog h2, .contact h2{
+    float: none;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.blog .blog-list, .contact form{
+    float: none;
+    width: 100%;
+}
+.blog li{
+    width: 32%;
+    margin-right: 2%;
+}
+.contact fieldset{
+    width: 48%;
+    margin-right: 4%;
+}
+
+.map iframe{
+    width:100%
+}
+
+
+/* footer style */
+.footer address{
+    /* padding: 10px 0; */
+    /* text-align: center; */
+    color: #3f51b5;
+    font-style: normal;
+    text-transform: uppercase;
+}
